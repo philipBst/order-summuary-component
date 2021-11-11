@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500;600;700&display=swap");
+
+$breakpoint-tablet: 768px;
+
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin norepeat {
+  background-repeat: no-repeat;
+  background-color: #e0e8ff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background: url("./assets/pattern-background-mobile.svg");
+  @include norepeat();
+  @include flexCenter();
+
+  #card {
+    width: 90%;
+    height: max-content;
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    background: #fff;
+
+    > img {
+      width: 100%;
+    }
+
+    main {
+      @include flexCenter();
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+
+      h1 {
+        font-size: 1.7rem;
+        color: #243255;
+        text-transform: capitalize;
+      }
+
+      p {
+        width: 35ch;
+        font-size: 0.9rem;
+        color: #787d91;
+        text-align: center;
+      }
+
+      .plan {
+        @include flexCenter();
+        width: max-content;
+        gap: 3rem;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        background: #f8f9fe;
+
+        aside {
+          @include flexCenter();
+          gap: 0.7rem;
+
+          .price {
+            h3.title {
+              text-transform: capitalize;
+              font-weight: 700;
+              font-size: 1rem;
+              color: #243255;
+            }
+            h3 {
+              font-size: 0.9rem;
+              font-weight: 400;
+              color: #767f96;
+              text-transform: none;
+            }
+          }
+        }
+
+        a {
+          font-size: 0.7rem;
+          font-weight: 700;
+          color: #382ae1;
+          text-transform: capitalize;
+        }
+      }
+
+      button {
+        background: #382ae1;
+        color: #fff;
+        font-weight: 500;
+        padding: 0.6rem 4.5rem;
+        border: none;
+        border-radius: 0.5rem;
+        box-shadow: 0px 10px 10px #392ae142;
+      }
+
+      > a {
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: capitalize;
+        text-decoration: none;
+        color: #767f96;
+        margin-top: 0.5rem;
+      }
+    }
+  }
+}
+
+@media (min-width: $breakpoint-tablet) {
+  body {
+    background: url("./assets/pattern-background-desktop.svg");
+    @include norepeat();
+  }
+
+  #card {
+    max-width: 23rem;
+  }
+}
